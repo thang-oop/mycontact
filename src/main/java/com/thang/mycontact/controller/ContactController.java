@@ -20,7 +20,7 @@ public class ContactController {
     @Autowired
     private ContactService contactService;
 
-    @GetMapping("/contact")
+    @GetMapping("/")
     public String list(Model model) {
         model.addAttribute("contacts", contactService.findAll());
         return "list";
@@ -64,4 +64,10 @@ public class ContactController {
         redirect.addFlashAttribute("successMessage", "Deleted contact successfully!");
         return "redirect:/contact";
     }
+
+    @GetMapping("/403")
+    public String accessDenied() {
+        return "403";
+    }
+
 }

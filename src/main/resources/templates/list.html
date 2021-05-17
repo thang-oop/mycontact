@@ -68,6 +68,9 @@
             </div>
         </th:block>
     </div>
+    <form action="#" th:action="@{/logout}" method="POST">
+        <button type="submit">Logout</button>
+    </form>
 </div><!-- /.container -->
 
 <footer th:replace="layout :: footer"></footer>
